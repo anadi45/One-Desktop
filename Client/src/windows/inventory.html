@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>One Desktop</title>
+    <style>
+        input {
+            display: block;
+        }
+
+        .container {
+            display: flex;
+            flex-direction: column;
+        }
+    </style>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+</head>
+
+<body>
+    <div class="container">
+        <form action="/inventory" method="post">
+            <label for="prod_name">Product Name</label>
+            <input type="text" id="prod_name" name="prod_name" required>
+            <label for="prod_flav">Product Flavor</label>
+            <input type="text" id="prod_flav" name="prod_flav" required>
+            <label for="prod_weight">Product Weight</label>
+            <input type="number" id="prod_weight" name="prod_weight" required>
+            <label for="prod_dop">Date of Purchase</label>
+            <input type="date" id="prod_dop" name="prod_dop" required>
+            <label for="prod_quant">Product Quantity</label>
+            <input type="number" id="prod_quant" name="prod_quant" required>
+            <label for="prod_price">Purchase Price</label>
+            <input type="number" id="prod_price" name="prod_price" required>
+            <label for="prod_disc">Product Discount</label>
+            <input type="number" id="prod_disc" name="prod_disc" required>
+            <label for="prod_mrp">Product MRP</label>
+            <input type="number" id="prod_mrp" name="prod_mrp" required>
+            <label for="prod_exp">Product Expiry</label>
+            <input type="date" id="prod_exp" name="prod_exp" required>
+            <button class="btn btn-primary my-2 update_inventory">Submit</button>
+        </form>
+    </div>
+</body>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN"
+    crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"
+    integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3"
+    crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.min.js"
+    integrity="sha384-mQ93GR66B00ZXjt0YO5KlohRA5SY2XofN4zfuZxLkoj1gXtW8ANNCe9d5Y3eG5eD"
+    crossorigin="anonymous"></script>
+<script>
+    const updateInventory = document.querySelector(".update_inventory");
+
+    updateInventory.addEventListener("click", () => {
+        alert("Inventory Updated Successfully");
+    });
+</script>
+
+</html>
