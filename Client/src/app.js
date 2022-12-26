@@ -54,9 +54,7 @@ app.post("/updateInventory", function (req, res) {
                 recursive: true
             });
         }
-        // return
-        console.log(savePath);
-        let data = JSON.stringify(req.body);
+        let data = JSON.stringify({...req.body,synced: false});
 
         fs.writeFileSync(savePath, data);
         res.redirect("/");

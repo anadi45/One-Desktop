@@ -14,7 +14,6 @@
     <div class="container">
         <h3>Products About to Expire</h3>
         <ol style="1" class="expired-prod-list">
-
         </ol>
     </div>
 </body>
@@ -39,7 +38,7 @@
             for (let i = 0; i < data.length; i++) {
                 let li = document.createElement("li");
                 li.appendChild(document.createTextNode(`Product Name - ${data[i].prod_name} | Expiry Date - ${new Date(data[i].prod_exp).toLocaleDateString('en-GB')}`));
-                li.setAttribute("class", "expired-prod"); // added line
+                li.setAttribute("class", "expired-prod"); 
                 expireProductsList.appendChild(li);
             }
         });
