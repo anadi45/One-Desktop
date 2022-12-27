@@ -38,7 +38,7 @@
             for (let i = 0; i < data.length; i++) {
                 if(data[i].synced === false) {
                     let li = document.createElement("li");
-                    li.appendChild(document.createTextNode(`Product - ${data[i]._id}`));
+                    li.appendChild(document.createTextNode(`Product - ${data[i].prod_name}`));
                     li.setAttribute("class", "sync-prod");
                     let button = document.createElement("button");
                     button.appendChild(document.createTextNode(`Sync`));

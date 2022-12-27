@@ -168,4 +168,23 @@ app.get("/syncProductsList", function (req, res) {
     }
 });
 
+app.get("/productsLists", function (req, res) {
+    try {
+        const dir = path.join((electron.app || electron.remote.app).getPath('userData'), "saveFiles");
+        fs.readdir(dir, (err, files) => {
+            if (err) {
+                console.error(err);
+            }
+            let data = [];
+            files.forEach(file => {
+                const content = fs.readFileSync(dir + "/" + file);
+                data.push(JSON.parse(content));
+            });
+            res.send(data);
+        });
+    } catch (error) {
+        console.log(error);
+    }
+});
+
 module.exports = app;
