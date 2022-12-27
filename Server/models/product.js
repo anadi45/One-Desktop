@@ -4,7 +4,7 @@ const productSchema = new mongoose.Schema({
     _id: String,
     name: String,
     flavor: String,
-    Weight: String,
+    weight: String,
     dateOfPurchase: Date,
     quantity: Number,
     price: Number,
@@ -15,4 +15,4 @@ const productSchema = new mongoose.Schema({
 
 const Product = new mongoose.model("Product", productSchema);
 
-exports = module.exports = Product;
+exports = module.exports = {Product};
