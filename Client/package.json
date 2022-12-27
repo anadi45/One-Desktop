@@ -1,6 +1,6 @@
 {
-  "name": "client",
-  "productName": "client",
+  "name": "One Desktop",
+  "productName": "One Desktop",
   "version": "1.0.0",
   "description": "My Electron application description",
   "main": "src/index.js",

@@ -69,7 +69,7 @@
                 return response.json();
             })
             .then(function (data) {
-                alert(data.message);
+                alert(data.message,"One Desktop");
                 if(data.message === "Sync Successfull") {
                     window.location.href = `http://localhost:8080/cloudSuccess/${dataObj._id}`; 
                 } else {
