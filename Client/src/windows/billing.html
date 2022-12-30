@@ -119,13 +119,16 @@
                     <td>Products Selected</td>
                     <td>Rate</td>
                     <td>Quantity</td>
-                    <td>Total</td>
                     </th>
                 </thead>
                 <tbody>
 
                 </tbody>
             </table>
+            <button type="submit" class="btn-confirm">Confirm Order</button>
+            <!-- <form action="" method="post">
+
+            </form> -->
         </div>
     </div>
 </body>
@@ -143,6 +146,7 @@
 <script>
     const tbodyRef = document.querySelector(".select-prod-list").getElementsByTagName('tbody')[0];
     const prodForm = document.querySelector(".prod-form");
+    const confirmBtn = document.querySelector(".btn-confirm");
 
     prodForm.addEventListener("submit", function (e) {
         e.preventDefault();
@@ -151,19 +155,32 @@
         let newCell1 = newRow.insertCell();
         let newCell2 = newRow.insertCell();
         let newCell3 = newRow.insertCell();
-        let newCell4 = newRow.insertCell();
+        // let newCell4 = newRow.insertCell();
         let newText1 = document.createTextNode(product.value);
         let newText2 = document.createElement("input");
-        newText2.setAttribute("type","number");  
+        newText2.setAttribute("type", "number");
+        newText2.setAttribute("required", "true");
         let newText3 = document.createElement("input");
-        newText3.setAttribute("type","number");
-        let newText4 = document.createElement("input");
-        newText4.setAttribute("type","number");
-        newText4.setAttribute("disabled","true");
+        newText3.setAttribute("type", "number");
+        newText3.setAttribute("required", "true");
+        // let newText4 = document.createElement("input");
+        // newText4.setAttribute("type","number");
+        // newText4.setAttribute("disabled","true");
         newCell1.appendChild(newText1);
         newCell2.appendChild(newText2);
         newCell3.appendChild(newText3);
-        newCell4.appendChild(newText4);
+        // newCell4.appendChild(newText4);
+    });
+
+    confirmBtn.addEventListener("click", function (e) {
+        e.preventDefault();
+        const tableBody = document.querySelector(".select-prod-list");
+        var rows = document.getElementsByTagName("table")[0].rows;
+        var last = rows[rows.length - 1];
+        var cell = last.cells[0];
+        var value = cell.innerHTML;
+
+        console.log(value)
     });
 
     let suggestions = [];
